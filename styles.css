@@ -4,17 +4,40 @@ body{
     text-align: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+h1{
+    font-size: 4em;
+}
+#scoreHeader{
+    font-size: 2em;
+    margin-bottom: 10px;
+    text-align: right;
+}
+#correctQuestion{
+    font-size: 1.5em;
+    color: green;
+    font-weight: bolder;
+}
+#totalQuestions{
+    font-size: 1.5em;
+    font-weight: bolder;
+}
 button{
     width: fit-content;
     align-self: center;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.0em;
+    font-weight: bolder;
+    background-color: rgb(154, 209, 235);
+    outline: none;
 }
-
 #slides {
     position: relative;
-    height: 50vh;    
+    height: 25em;    
     padding: 0px;
     margin: 0px;
-    /* list-style-type: none; */
+    background-color: white;  
 }
 
 .slide {
@@ -33,7 +56,6 @@ button{
     font-size: 1.5em;
     padding: 20px;
     box-sizing: border-box;
-    /* background-color: rgb(186, 232, 247); */
     color:black;
     border: 1px solid black;
     border-radius: 10px;
@@ -44,45 +66,107 @@ button{
     transition: opacity 0.5s;
 }
 .slide h2{
-    margin: 0%;
+    margin: 0px 0px 15px 0px;
     padding: 0%;
+    font-size: 1.5em;
 }
-
 
 .showing {
     opacity: 1;
     z-index: 2;
 }
 .optionsDiv{
-    border: 1px solid blue;
     width: 100%;
-    background-color: rgb(216, 234, 241);
+    background-color: rgba(216, 234, 241, 0.438);
     text-align: left;
     margin: 2.5px;
+    padding: 5px;
+    border-radius: 7.5px;
+    font-size: 1em;
 }
-
-
 .wrong{
-    border: 2px solid red;
-    
+    background-color: rgba(255, 0, 0, 0.9);
+    color: white;
+    font-weight: bold;    
+    text-shadow: 0px 0px 0 #000, 0px 0px 0 #000, 0.5px 0.5px 0 #000, 0px 0px 0 #000;
 }
 .correct{
-    border: 2px solid green;
-    
+    background-color: rgba(0, 255, 0, 0.9);
+    color: white;
+    font-weight: bolder;    
+    text-shadow: 0px 0px 0 #000, 0px 0px 0 #000, 0.5px 0.5px 0 #000, 0px 0px 0 #000;
+}
+#resultDisplay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 274px;    
+    background-image: url(badminton4.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+#finalScoreDiv{
+    font-size: 2.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 0px;
+    padding: 0 auto;
 }
 
-/* .slide:nth-of-type(1) {
-    background: red;
+@media all and (max-width:480px){
+    h1{
+        font-size: 2em;
+        margin-bottom: 0px;
+    }
+    #scoreHeader{
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    #correctQuestion{
+        font-size: 1.0em;
+        color: green;
+    }
+    #totalQuestions{
+        font-size: 1.0em;
+    }
+    button{
+        margin-top: 10px;
+    }
+    #slides {
+        position: relative;
+        height: 20em;    
+        padding: 0px;
+        margin: 0px;
+        background-color: white;  
+    }
+    
+    .slide {  
+        font-size: 1.25em;
+        padding: 15px;
+    }
+    .slide h2{
+        margin: 0px 0px 15px 0px;
+        padding: 0%;
+        font-size: 1.3em;
+    }
+    #resultDisplay{
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-image: url(badminton4.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    #finalScoreDiv{
+        font-size: 1.5em;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        padding: 0px;
+        padding: 0 auto;
+    }
+    
 }
-.slide:nth-of-type(2) {
-    background: orange;
-}
-.slide:nth-of-type(3) {
-    background: green;
-}
-.slide:nth-of-type(4) {
-    background: blue;
-}
-.slide:nth-of-type(5) {
-    background: purple;
-} */

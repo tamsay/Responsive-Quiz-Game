@@ -3,25 +3,25 @@ let totalQuestion = document.querySelector('#totalQuestions')
 
 
 const questions = [{
-    question: "What is 2*5?",
-    choices: [2, 5, 10, 15, 20],
+    question: "1\nWho won the 2016 olympic gold medal in the men's singles category",
+    choices: ['Lee Chong Wei', 'Victor Axelsen', 'Chen Long'],
     correctAnswer: 2
   }, {
-    question: "What is 3*6?",
-    choices: [3, 6, 9, 12, 18],
-    correctAnswer: 4
-  }, {
-    question: "What is 8*9?",
-    choices: [72, 99, 108, 134, 156],
+    question: "2\nWho won the Women's singles final at the 2020 All England Open?",
+    choices: ['Tai Tzu-ying', 'Chen Yu Fei', 'P.V. Sindhu', 'Akane Yamaguchi'],
     correctAnswer: 0
   }, {
-    question: "What is 1*7?",
-    choices: [4, 5, 6, 7, 8],
-    correctAnswer: 3
+    question: "3\nHow many feathers should be in a shuttle?",
+    choices: [20, 19, 16, 14, 15],
+    correctAnswer: 2
   }, {
-    question: "What is 8*8?",
-    choices: [20, 30, 40, 50, 64],
-    correctAnswer: 4
+    question: "4\nWho won the 2019 Lagos International men's singles final?",
+    choices: ['Nguyễn Tiến Minh', 'Anuoluwapo Opeyori', 'Misha Zilberman', 'Sergey Sirant'],
+    correctAnswer: 0
+  }, {
+    question: "5\nWhat was the original name of Badminton?",
+    choices: ['Shuttlecock', 'Poona', 'Battledore', 'All of these'],
+    correctAnswer: 3
   }];
  
   correctQuestion.innerText = 0;
@@ -41,7 +41,7 @@ const questions = [{
 
         div.appendChild(h2)
         
-        for(y=0; y<5; y++){
+        for(y=0; y<element.choices.length; y++){
             let optionDiv = document.createElement('div')
             let radio = document.createElement('input')
             let span = document.createElement('span')
@@ -102,15 +102,8 @@ const questions = [{
   let calculateScore =()=>{
         score++;
         correctQuestion.innerText = score;
-
-        // let resultDiv = document.querySelector('#test');
-        // resultDiv.innerText = `You got ${score} out of ${questions.length} Questions`
-        // resultDiv.style.display = 'none'
   }
   
-  
-
-
 var slides = document.querySelectorAll('#slides .slide');
 var currentSlide = 0;
 
@@ -134,19 +127,30 @@ nextBtn.addEventListener('click', ()=>{
         
     }
     else if (count === 5){
+
+        let header = document.querySelector('#scoreHeader');
         let test = document.querySelector('#slides');
         test.style.display = 'none';
         let scoreHeader = document.querySelector('#scoreHeader');
         scoreHeader.style.display = 'none'
 
-        let resultDiv = document.querySelector('#test');
-        resultDiv.innerText = `You got ${correctQuestion.textContent} out of ${questions.length} Questions`
-        nextBtn.innerText = "Restart quiz"
-        
+        let div = document.createElement('div')
+        let div2 = document.createElement('div')
+        let img = document.createElement('img');
 
+        div.id = 'resultDisplay'
+        div2.id = 'finalScoreDiv'
+        img.id = 'scoreImage'
+        img.src = 'badminton4.jpg'
+        
+        let score = (Number(correctQuestion.textContent)/Number(questions.length))*100;
+        div2.innerText = `You scored ${score}%`
+        div.appendChild(div2)
+
+        header.insertAdjacentElement('afterend', div)
+        nextBtn.innerText = "Restart quiz"
     }
     else{
         window.location.reload();
     }
-
 });
